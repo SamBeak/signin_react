@@ -1,0 +1,19 @@
+#wrap{
+    display: grid;
+    grid-template-areas: "header"
+                         "home"
+                         "footer";
+    grid-template-rows: 1fr auto 1fr; // home을 반응형으로 만들기 위해 auto로 설정
+    grid-template-columns: 1fr; // 반응형으로 만들기 위해 1fr로 설정
+    height: 100vh;
+}
+
+#header{
+    grid-area: header;
+}
+#home{
+    grid-area: home;
+}
+#footer{
+    grid-area: footer;
+}
