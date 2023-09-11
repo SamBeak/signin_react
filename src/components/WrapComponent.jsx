@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FooterComponent from './wrap/FooterComponent';
 import HeaderComponent from './wrap/HeaderComponent';
 import HomeComponent from './wrap/HomeComponent';
+import SigninComponent from './wrap/user/SigninComponent';
 // import SidebarComponent from './wrap/SidebarComponent';
 
 export default function WrapComponent() {
@@ -15,6 +16,7 @@ export default function WrapComponent() {
           <Route path="/" element={<HeaderComponent />} >
             <Route index element={<HomeComponent />} />
             <Route path="/home" element={<HomeComponent />} />
+            <Route path="/signin" element={<SigninComponent />} />
             <Route path="*" element={<h1>404</h1>} />
           </Route>
         </Routes>
