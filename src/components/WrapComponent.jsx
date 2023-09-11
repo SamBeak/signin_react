@@ -17,7 +17,7 @@ export default function WrapComponent() {
             <Route index element={<HomeComponent />} />
             <Route path="/home" element={<HomeComponent />} />
             <Route path="/signin" element={<SigninComponent />} />
-            <Route path="*" element={<h1>404</h1>} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
           </Route>
         </Routes>
       </BrowserRouter>
