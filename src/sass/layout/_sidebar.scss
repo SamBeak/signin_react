@@ -22,10 +22,25 @@
                 gap: 1rem;
                 .signin__list{
                     display: grid;
-                    gap: 1rem;
+                    gap: 3rem;
                     .signin__item{
+                        &:first-child{
+                            position: relative;
+                        }
                         &:nth-child(2){
                             position: relative;
+                        }
+                        label{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            color: #aaa7bc;
+                            transform: translate(1rem, 1.2rem);
+                            transform-origin: left;
+                            transition: all .3s ease-in-out;
+                            &.active{
+                                transform: translate(0, -2rem) scale(.8);
+                            }
                         }
                         >input{
                             border: 0;
@@ -37,9 +52,6 @@
                             background-color: #f4f5f7;
                             color: #5a4f79;
                             font-size: 1.2rem;
-                            &::placeholder{
-                                color: #aaa7bc;
-                            }
                         }
                         .toggle__btn{
                             position: absolute;

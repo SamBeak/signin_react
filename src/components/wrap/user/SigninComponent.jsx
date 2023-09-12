@@ -3,6 +3,7 @@ import React from 'react';
 export default function SigninComponent() {
     // const userPwInput = document.querySelector('#userPw'); // vanilla js 230911_bhg
     const userPwInput = React.useRef(); // react js 230911_bhg
+    // 비밀번호 보임/숨김 토글 이벤트 230911_bhg
     const onClickTogglePw = (e) => {
         e.target.classList.toggle('active');
         userPwInput.current.type = userPwInput.current.type === "password" ? "text" : "password";
@@ -11,8 +12,21 @@ export default function SigninComponent() {
         // userPwInput.type = userPwInput.type === "password" ? "text" : "password"; // vanilla js 230911_bhg
     };
     
+    // signup 버튼 클릭 링크 이동 이벤트 230911_bhg
     const onClickSignup = () => {
         window.location.href = '/signup';
+    };
+
+    // input - label 포커스 이벤트 230912_bhg
+    const onFocusInput = (e) => {
+        const labelHtml = e.target.id;
+        const label = document.querySelector(`label[for=${labelHtml}]`); // vanilla js 230912_bhg
+        label.classList.add('active');
+        e.target.addEventListener('blur', (e) => {
+            if(e.target.value === '') {
+                label.classList.remove('active');
+            }
+        });
     };
 
   return (
@@ -25,12 +39,12 @@ export default function SigninComponent() {
                 <form action="" id="signinForm" method='get'>
                     <ul className="signin__list">
                         <li className="signin__item">
-                            <label htmlFor="userId"></label>
-                            <input type="text" id="userId" name="userId" placeholder="아이디" required />
+                            <label htmlFor="userId">아이디</label>
+                            <input type="text" id="userId" name="userId" onFocus={onFocusInput} required autoComplete='off' />
                         </li>
                         <li className="signin__item">
-                            <label htmlFor="userPw"></label>
-                            <input type="password" id="userPw" name="userPw" placeholder="비밀번호" ref={userPwInput} required />
+                            <label htmlFor="userPw">비밀번호</label>
+                            <input type="password" id="userPw" name="userPw" ref={userPwInput} onFocus={onFocusInput} required autoComplete='off' />
                             <button type='button' className='toggle__btn btn' onClick={onClickTogglePw}></button>
                         </li>
                     </ul>
