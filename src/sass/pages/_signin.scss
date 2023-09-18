@@ -65,6 +65,7 @@
                             translate: 0 -50%;
                             width: 2rem;
                             height: 2rem;
+                            border: none;
                             background: url(../../../public/images/eye-open.svg) no-repeat center center / cover;
                             &.active{
                                 background: url(../../../public/images/eye-close.svg) no-repeat center center / cover;
@@ -85,8 +86,22 @@
                         &:hover{
                             background-color: #aaa7bc;
                         }
-                        &:first-child{}
-                        &:last-child{}
+                    }
+                }
+                .pw-find__box{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    .pw-find__btn{
+                        width: 30%;
+                        border: none;
+                        background-color: #fff;
+                        transition: all 0.3s ease-in-out;
+                        &:hover{
+                            transform: scale(1.1);
+                            text-decoration: underline;
+                        }
                     }
                 }
             }

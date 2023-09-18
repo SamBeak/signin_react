@@ -29,6 +29,11 @@ export default function SigninComponent() {
         });
     };
 
+    // 비밀번호 찾기 이벤트 230918_bhg
+    const onClickPwFind = (e) => {
+        window.location.href= '/findpw';
+    }
+
   return (
     <div id="signin">
         <div className="container">
@@ -51,6 +56,9 @@ export default function SigninComponent() {
                     <div className="signin__btns">
                         <button className="signin__btn btn" type="submit">로그인</button>
                         <button className="signin__btn btn" type="button" onClick={onClickSignup}>회원가입</button>
+                    </div>
+                    <div className="pw-find__box">
+                        <button className="pw-find__btn" type='button' onClick={onClickPwFind}>비밀번호 찾기</button>
                     </div>
                 </form>
             </div>
